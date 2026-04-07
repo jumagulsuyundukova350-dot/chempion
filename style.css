@@ -1,0 +1,113 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 90%;
+  max-width: 600px;
+}
+
+.screen { display: none; text-align: center; }
+.screen.active { display: block; }
+
+.main-title { font-size: 3rem; color: #2c3e50; margin-bottom: 15px; }
+.subtitle { font-size: 1.8rem; color: #34495e; margin-bottom: 20px; }
+.input-name {
+  font-size: 1.4rem; padding: 15px; border-radius: 12px; border: 2px solid #2980b9; margin-bottom: 20px;
+  width: 70%; outline: none;
+}
+.start-btn {
+  font-size: 1.4rem; padding: 14px 35px; border-radius: 25px; border: none; cursor: pointer;
+  background: linear-gradient(135deg,#ff6f00,#ffb300); color: #fff; font-weight: 700;
+  box-shadow: 0 5px 15px rgba(255,179,0,0.5); transition: all 0.3s ease;
+}
+.start-btn:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(255,179,0,0.7); }
+
+.lesson-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+.lesson-grid .btn {
+  padding: 12px 25px; font-size: 1.1rem; border-radius: 15px; border: none; cursor: pointer;
+  font-weight: 500; transition: transform 0.3s, box-shadow 0.3s;
+}
+.lesson-grid .btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+#progressContainer {
+  width: 100%; height: 30px; border-radius: 50px;
+  background: rgba(255,255,255,0.2); backdrop-filter: blur(12px);
+  margin: 25px 0; overflow: hidden; box-shadow: inset 0 4px 12px rgba(0,0,0,0.25); position: relative;
+}
+#progressBar {
+  height: 100%; width: 0%; border-radius: 50px; transition: width 0.5s ease;
+  display: flex; align-items: center; justify-content: flex-end; font-size: 12px; font-weight: bold;
+  color: #fff; padding-right: 10px; position: relative;
+}
+#progressBar::before {
+  content:""; position:absolute; top:0; left:-120%; width:60%; height:100%;
+  background: linear-gradient(120deg, transparent, rgba(234, 235, 230, 0.7), transparent);
+  animation: shineMove 2.5s infinite;
+}
+@keyframes shineMove { 100% { left:160%; } }
+#progressBar::after {
+  content:""; position:absolute; inset:0; border-radius:50px; opacity:0.6; animation: glowPulse 2s infinite;
+}
+@keyframes glowPulse { 0%,100%{opacity:0.4;}50%{opacity:0.9;} }
+
+.bio { background: linear-gradient(135deg,#00e676,#00c853); box-shadow:0 0 20px rgba(0,230,118,0.7);}
+.geo { background: linear-gradient(135deg,#29b6f6,#0288d1); box-shadow:0 0 20px rgba(41,182,246,0.7);}
+.history { background: linear-gradient(135deg,#ffb300,#ff6f00); box-shadow:0 0 20px rgba(255,179,0,0.7);}
+
+.question { font-size: 1.5rem; margin: 20px 0; color: #2c3e50; }
+.answers button {
+  padding: 12px 25px; margin: 8px; border-radius: 18px; border:none; cursor:pointer;
+  font-weight:500; transition: all 0.3s; background: linear-gradient(135deg,#6a11cb,#2575fc); color:#fff;
+}
+.answers button:hover { transform: scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+.timer { font-size:1.4rem; margin-top:15px; color:#e74c3c; font-weight:bold; }
+
+#finalResult {
+  font-size:2.2rem; font-weight:700; color:#edf2f3;
+  text-align:center; background:linear-gradient(135deg,#ffd54f,#ff6f00);
+  padding:50px; border-radius:25px; box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+#menu h2 {
+    font-size: 3rem;    
+    text-align: center;    
+    margin-bottom: 40px;  
+    color: #0e0e0d;       
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); 
+}
+
+.lesson-grid {
+    display: flex;
+    justify-content: center;  
+    gap: 40px;              
+    flex-wrap: wrap;         
+}
+
+.lesson-grid .btn {
+    font-size: 1.5rem;          
+    padding: 20px 40px;         
+    border-radius: 15px;      
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.lesson-grid .btn:nth-child(1) { background: #00c853; }  
+.lesson-grid .btn:nth-child(2) { background: #29b6f6; } 
+.lesson-grid .btn:nth-child(3) { background: #ff6f00; } 
+
+.lesson-grid .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
